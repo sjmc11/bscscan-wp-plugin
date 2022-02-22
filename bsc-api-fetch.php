@@ -15,16 +15,16 @@ Author URI: https://github.com/sjmc11/
  * This serves to cover the core functionality of fetching from the bscscan API every x hours
  */
 
-class mafiaScan {
+class bscScan {
 
 //    public static $tokenDecimal;
 //    public static $tokenAddress;
 //
 //
 //    function __construct() {
-//        mafiaScan::$tokenDecimal = $GLOBALS['tokenDecimal'];
-//        mafiaScan::$tokenAddress = $GLOBALS['tokenAddress'];
-//        mafiaScan::$tokenAddress = "0x5xbeea03923266ca8af5ad3821b2j150b33a25a5";
+//        bscScan::$tokenDecimal = $GLOBALS['tokenDecimal'];
+//        bscScan::$tokenAddress = $GLOBALS['tokenAddress'];
+//        bscScan::$tokenAddress = "0x5xbeea03923266ca8af5ad3821b2j150b33a25a5";
 //    }
 
     static function handleActivate() {
@@ -45,7 +45,7 @@ class mafiaScan {
         }
 
        if(get_field('bscscan_api_key', 'option') && get_field('bscscan_token_address', 'option') && get_field('bscscan_burn_address', 'option')){
-        self::fetchMafiaStats();
+        self::fetchTokenStats();
        }
 
     }
@@ -175,7 +175,7 @@ class mafiaScan {
     /**
      * @return void
      */
-    static function fetchMafiaStats(){
+    static function fetchTokenStats(){
         self::fetchCircSupply();
         self::fetchBurnAmount();
     }
@@ -255,12 +255,12 @@ class mafiaScan {
 
 
 
-register_activation_hook( __FILE__, array( 'mafiaScan', 'handleActivate' ) );
-register_deactivation_hook( __FILE__, array( 'mafiaScan', 'handleDeactivate' ) );
+register_activation_hook( __FILE__, array( 'bscScan', 'handleActivate' ) );
+register_deactivation_hook( __FILE__, array( 'bscScan', 'handleDeactivate' ) );
 
-add_action( 'acf/init', array( 'mafiaScan', 'registerAcfAdminPage'));
+add_action( 'acf/init', array( 'bscScan', 'registerAcfAdminPage'));
 
-add_action('bsc_fetch_event', array( 'mafiaScan', 'fetchMafiaStats'));
+add_action('bsc_fetch_event', array( 'bscScan', 'fetchTokenStats'));
 
 // Uncomment to fetch stats on refresh
-//add_action('init', array( 'mafiaScan', 'fetchMafiaStats'));
+//add_action('init', array( 'bscScan', 'fetchTokenStats'));
