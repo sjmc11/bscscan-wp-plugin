@@ -26,9 +26,13 @@ ACF is used to bootstrap the admin page and meta field data.
 
 The plugin will automatically update the following stats every hour.
 
-- Total supply
-- Total burned
-- Circulating supply
+- 💰 Total supply
+- 🔥 Total burned
+- 🪙 Circulating supply
+
+Return values in your template using ACF get_field() syntax.
+
+eg: `get_field('total_supply', 'options')`
 
 To manually fetch token stats, disable & enable the plugin providing API key, contract & burn address have been provided.
 
