@@ -32,7 +32,7 @@ The plugin will automatically update the following stats every hour.
 
 To manually fetch token stats, disable & enable the plugin providing API key, contract & burn address have been provided.
 
-### Customise the schedule
+## Customise the schedule
 
 in bsc-api-fetch.php on line 44 you can modify the scheduled event.
 See wordpress docs on [wp_schedule_event.](https://developer.wordpress.org/reference/functions/wp_schedule_event/) 
