@@ -32,7 +32,9 @@ The plugin will automatically update the following stats every hour.
 
 Return values in your template using ACF get_field() syntax.
 
-eg: `get_field('total_supply', 'options')`
+- `get_field('total_supply', 'options')`
+- `get_field('total_burned', 'options')`
+- `get_field('circ_supply', 'options')`
 
 To manually fetch token stats, disable & enable the plugin providing API key, contract & burn address have been provided.
 
